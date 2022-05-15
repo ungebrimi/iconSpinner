@@ -591,12 +591,7 @@ const currentIconInfo = document.querySelector('.current__icon-info')
 // set the raycaster
 const raycaster = new THREE.Raycaster()
 let currentIntersect = null
-/*
-const rayOrigin = new THREE.Vector3(0, 0, 100)
-const rayDirection = new THREE.Vector3(0, 0, -.5)
-raycaster.set(rayOrigin, rayDirection)
-rayDirection.normalize() 
-*/
+
 // store mouse position in a vector 2 object. x/y axis
 let mouse = new THREE.Vector2()
 mouse.x = 0
@@ -608,6 +603,8 @@ window.addEventListener('mousemove', (event) =>
     mouse.x = ( event.clientX / window.innerWidth ) * 2 - 1;
     mouse.y = - ( event.clientY / window.innerHeight ) * 2 + 1;
 })
+
+
 
 
 const objectsToIntersect =
@@ -638,7 +635,7 @@ const objectsToIntersect =
     icon24         
 ]
 
-window.addEventListener('mousedown', () =>
+window.addEventListener('pointerdown', () =>
 {
   if(currentIntersect)
   {
